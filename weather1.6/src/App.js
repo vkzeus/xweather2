@@ -55,7 +55,7 @@ function App() {
       <div className="weather-cards">
         {weatherData && (
           <div className="weather-card">
-            <h2>{weatherData.location.name}</h2>
+            
             <p>Temperature: {weatherData.current.temp_c}°C</p>
             <p>Humidity: {weatherData.current.humidity}%</p>
             <p>Condition: {weatherData.current.condition.text}</p>
