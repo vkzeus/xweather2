@@ -52,7 +52,7 @@ function App() {
         <button onClick={handleSearch}>Search</button>
       </div>
       {loading && <p className="loading-message">Loading data…</p>}
-      {error && <p className="error-message">{error}</p>} {/* Displays the error message */}
+      {error && <p className="error-message">{error}</p>} {
       <div className="weather-cards">
         {weatherData && (
           <div className="weather-card">
