@@ -55,7 +55,7 @@ function App() {
       {error && <p className="error-message">{error}</p>} {
       <div className="weather-cards">
         {weatherData && (
-          
+          <div>
             <div className="weather-card">Temperature: {weatherData.current.temp_c}°C</div>
             <div className="weather-card">Humidity: {weatherData.current.humidity}%</div>
            <div className="weather-card">Condition: {weatherData.current.condition.text}</div>
@@ -63,7 +63,7 @@ function App() {
           </div>
         )}
       </div>
-    </div>
+}</div>
   );
 }
 
