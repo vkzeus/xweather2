@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import "./App.css"; // Make sure to import your CSS styles
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false); // To control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
 
   // Function to open the modal
   const openModal = () => {
@@ -55,7 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Button to open the form modal */}
+      {/* Button to open the modal */}
       <button onClick={openModal}>Open Form</button>
 
       {/* Modal structure */}
@@ -102,7 +103,6 @@ function App() {
                 </button>
               </div>
             </form>
-            <button onClick={closeModal}>Close</button>
           </div>
         </div>
       )}
