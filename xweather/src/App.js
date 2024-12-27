@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_KEY = "aa8dfd477e1e46f6878172405242412 "; 
+const API_KEY = "aa8dfd477e1e46f6878172405242412"; // Replace with your actual API key
 
 function App() {
   const [city, setCity] = useState("");
@@ -17,7 +17,7 @@ function App() {
     }
 
     setLoading(true);
-    setError("");
+    setError(""); // Clear any previous errors
     setWeatherData(null);
 
     try {
@@ -32,7 +32,8 @@ function App() {
       );
       setWeatherData(response.data);
     } catch (err) {
-      setError("Could not fetch weather data. Please try again.");
+      // Adjusted the error message to match Cypress test expectations
+      setError("Failed to fetch weather data");
     } finally {
       setLoading(false);
     }
@@ -51,11 +52,10 @@ function App() {
         <button onClick={handleSearch}>Search</button>
       </div>
       {loading && <p className="loading-message">Loading data…</p>}
-      {error && <p className="error-message">{error}</p>}
+      {error && <p className="error-message">{error}</p>} {/* Displays the error message */}
       <div className="weather-cards">
         {weatherData && (
           <div className="weather-card">
-            
             <p>Temperature: {weatherData.current.temp_c}°C</p>
             <p>Humidity: {weatherData.current.humidity}%</p>
             <p>Condition: {weatherData.current.condition.text}</p>
