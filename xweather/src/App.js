@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_KEY = "aa8dfd477e1e46f6878172405242412"; // Replace with your actual API key
+const API_KEY = "aa8dfd477e1e46f6878172405242412"; 
 
 function App() {
   const [city, setCity] = useState("");
@@ -17,7 +17,7 @@ function App() {
     }
 
     setLoading(true);
-    setError(""); // Clear any previous errors
+    setError(""); 
     setWeatherData(null);
 
     try {
@@ -32,7 +32,7 @@ function App() {
       );
       setWeatherData(response.data);
     } catch (err) {
-      // Adjusted the error message to match Cypress test expectations
+     
       setError("Failed to fetch weather data");
     } finally {
       setLoading(false);
