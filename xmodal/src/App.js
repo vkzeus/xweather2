@@ -13,6 +13,13 @@ function App() {
     setIsModalOpen(false);
   };
 
+  // Function to handle clicks outside the modal (to close it)
+  const handleClickOutside = (e) => {
+    if (e.target.className === "modal") {
+      closeModal();
+    }
+  };
+
   // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,13 +56,12 @@ function App() {
   return (
     <div className="App">
       {/* Button to open the form modal */}
-      <h2>User Details Modal</h2>
-      <button onClick={openModal} style={{color:"blue"}}>Open Form</button>
+      <button onClick={openModal}>Open Form</button>
 
       {/* Modal structure */}
       {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal" onClick={handleClickOutside}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Fill out the form</h2>
             <form onSubmit={handleSubmit}>
               <div>
